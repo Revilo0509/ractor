@@ -1,17 +1,14 @@
 /// <reference types="vite/client" />
 
-import React from "react"
+import type { RouteObject } from "react-router"
 
 declare module "virtual:ractor" {
-  interface Route {
-    path?: string
-    index?: boolean
-    element?: React.ReactNode
-    children?: Route[]
-    Component?: React.ComponentType
-    Layout?: React.ComponentType
-  }
-
-  const routes: Route[]
+  const routes: RouteObject[]
   export default routes
 }
+
+export default function ractor(): {
+    name: string;
+    resolveId(id: string): "\0virtual:ractor" | undefined;
+    load(id: string): string | undefined;
+};
