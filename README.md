@@ -4,11 +4,11 @@ Small, simple page router for react.
 
 ## Usage
 
-Link or include this package to your project somehow. This is usally done with _npm link_.
+Link or include this package to your project somehow.
+
+This is usally done with _npm link_. I found that the easiest way was to pack this project with _npm pack_ then use _npm install ./<package_name>_ to install it in the desired project.
 
 Then configure vite to use the ractor plugin.
-
-Example config:
 
 ```ts
 import { defineConfig } from "vite";
@@ -21,8 +21,6 @@ export default defineConfig({
 ```
 
 After you've configured vite you need to configure the entry react file with react router. But instead of defining your own routes you import and use "routes" from "virtual:ractor".
-
-Example:
 
 ```ts
 import { StrictMode } from "react";
@@ -42,4 +40,4 @@ createRoot(document.getElementById("root")!).render(
 
 ## Note
 
-I couldn't get the project configured correctly to play nicely with typescript. So you'll most likly get an error that "virtual:ractor" doesn't exist. While it does. 
+I couldn't get the project configured correctly to play nicely with typescript. So you'll most likly get an error that "virtual:ractor" doesn't exist. While it does.
